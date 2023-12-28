@@ -1,38 +1,505 @@
-.App {
-  text-align: center;
+*{
+  margin: 0%;
+  padding: 0%;
+  /* box-sizing: border-box; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav{
+  overflow: hidden;
+  height: 59px;
+  width: 100%;
+  display: flex;
+  background-color: red;
+}
+nav .hamburger {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+nav .hamburger .ham{
+  cursor: pointer;
+  padding: .1rem;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 8px;
+  transition: .5s;
+}
+nav .hamburger .ham:hover{
+  background-color: rgba(128, 128, 128, 0.167);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+nav .hamburger .ham .line1{
+  height: 2px;
+  width: 100%;
+  background-color: black;
+} 
+nav .hamburger img{
+  height: 4rem;
+  width: 8rem;
+  border-radius: 50%;
   }
+  nav .search-bar{
+    background-color: white;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .search-bar .search-input {
+    height: 65%;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: red; */
+    border: 1px solid rgba(128, 128, 128, 0.667);
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  nav .search-bar .search-input input{
+    height: 100%;
+    width: 88%;
+    position: relative;
+    border: none;
+  }
+  nav .search-bar .search-input input:focus{
+    outline: none;
+  }
+  
+
+  nav .search-bar .search-input input::placeholder{
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1rem;
+  }
+    nav .search-bar .search-input input[type="search"]{
+    padding-left: 13px;
+    font-size: 1rem;
+  }
+     /* .isActive{
+      background-color:rgba(220, 220, 220, 0.345);
+     } */
+  nav .search-bar .search-input #search{
+    cursor: pointer;
+    position: absolute;
+    left: 64.8%;
+    top: 1.3%;
+    display: block;
+    background-color: rgba(220, 220, 220, 0.345);
+    height: 2.5rem;
+    padding: 7px;
+    width: 4rem;
+    border-radius: 0px 50px 50px 0px;
+    box-sizing: border-box;
+    font-weight: 100;
+  }
+  nav .search-bar .search-input #search:hover{
+    background-color: rgba(220, 220, 220, 0.845);
+  }
+
+  nav .search-bar button{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px;
+    height: 40px;
+    width: 40px;
+    border: none;
+    font-size: 1.5rem;
+    background-color: rgba(220, 220, 220, 0.345);
+  }
+  nav .search-bar button:hover{
+    background-color: rgba(220, 220, 220, 0.845);
+
+  }
+
+  nav .right-icons{
+    background-color: white;
+    height: 100%;
+    width: 15%;
+  }
+  nav .right-icons .icons{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  nav .right-icons .icons #bell{
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.915);
+    cursor: pointer;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  nav .right-icons .icons #camera{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.915);
+  }
+  
+  nav .right-icons .icons .account-image{
+    cursor: pointer;
+
+    height: 2rem;
+    width: 2rem;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  nav .right-icons .icons .account-image img{
+    height: 100%;
+    width: 100%;
+  }
+/* ==========================layout==================== */
+main.layout{
+  height: 91vh;
+  width: 100%;
+  background-color: red;
+  display: flex;
+}
+main.layout .left{
+  height: 100%;
+  width: 18%;
+  background-color: white;
+}
+main.layout .right{
+  
+  height: 100%;
+  width: 82%;
+  background-color: white;
+}
+main.layout .right .right-top{
+  height: 10%;
+  width: 100%;
+  background-color: white;
+}
+main.layout .right .right-bottom{
+    height: 90%;
+  width: 100%;
+  background-color: white;
+  /* overflow: hidden; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* =========================sidebar=============== */
+section.sidebar{
+  box-sizing: border-box;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  overflow-y: scroll;
+}
+section.sidebar::-webkit-scrollbar{
+  background-color: white;
+  width: .5rem;
+}
+section.sidebar::-webkit-scrollbar-thumb{
+  visibility: hidden;
+  background-clip: content-box;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.547);
+}
+section.sidebar:hover::-webkit-scrollbar-thumb{
+  visibility: visible;
+}
+
+section.sidebar .sidebar-icons{
+  overflow: hidden;
+  border-radius: 15px;
+  height: 2.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  margin-top: 1rem;
+}
+
+section.sidebar .sidebar-icons:hover{
+  background-color: rgb(237, 243, 245);
+  cursor: pointer;
+}
+ 
+section.sidebar .sidebar-icons .main_icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 30%;
+  height: 100%;
+  /* background-color: pink; */
+}
+/* ==============hr-tag============== */
+#hr_tag{
+  color: rgba(128, 128, 128, 0.056);
+  margin-top: 1rem;
+}
+
+/* =======================sidebar-last-section================ */
+.sidebar .last-section {
+  background-color: white;
+  padding: 0px 10px 10px 10px;
+  line-height: 1.3rem;
+  /* gap: 3rem; */
+}
+.sidebar .last-section h5{
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.sidebar .last-section p{
+  margin-top: .5rem;
+  color: rgba(0, 0, 0, 0.609);
+  font-size: 13px;
+}
+
+/* =============================slider================ */
+div.slider-container {
+  height: 100%;
+  width: 100%;
+}
+div.slider-container .slider{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+div.slider-container .slider span{
+  cursor: pointer;
+position: absolute;
+top: 0%;
+display:block;
+height: 100%;
+width: 4rem;
+background-color: white;
+box-shadow: 30px 15px 50px white;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+div.slider-container .slider span#pre{
+  border-radius: 0px 10px 10px 0px;
+  left: 0%;
+}
+div.slider-container .slider span#next{
+box-shadow: -30px 15px 50px white;
+
+  right: 0%;
+  border-radius: 10px 0px 0px 10px;
+}
+div.slider-container .slider span p{
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+div.slider-container .slider span:hover p{
+  background-color: rgba(128, 128, 128, 0.167);
+}
+
+div.slider-container .slider ul{
+  height: 100%;
+  width: 150%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  gap: 1rem;
+}
+div.slider-container .slider ul li{
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 30%;
+  width: auto;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.067);
+  cursor: pointer;
+}
+div.slider-container .slider ul li:hover{
+  background-color: rgba(128, 128, 128, 0.167);
+}
+/* ============================Home_bar============================ */
+main#home_bar{
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 40px;
+}
+main#home_bar::-webkit-scrollbar{
+  background-color: white;
+  width: .5rem;
+}
+main#home_bar::-webkit-scrollbar-thumb{
+  background-clip: content-box;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.547);
+}
+
+main#home_bar .video-div{
+  height: 300px;
+  width: 350px;
+  overflow: hidden;
+  background-color: white;
+}
+main#home_bar .video-div iframe{
+  border-radius: 10px;
+  height: 70%;
+  width: 100%;
+}
+main#home_bar .content-div{
+  height: 30%;
+  width: 100%;
+  padding: 10px;
+  line-height: 1.2rem;
+  overflow: hidden;
+}
+main#home_bar .content-div h4{
+  font-weight: 550;
+  font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main#home_bar .content-div p{
+  font-size: 13px;
+}
+
+main#home_bar a{
+  text-decoration: none;
+  color: black;
+}
+/* ========================subscriptions================= */
+main#subscription{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+main#subscription::-webkit-scrollbar{
+  background-color: white;
+  width: .5rem;
+}
+main#subscription::-webkit-scrollbar-thumb{
+  background-clip: content-box;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.547);
+}
+main#subscription .subscriptions-item{
+  padding: 5px;
+  box-sizing: border-box;
+  width: 14rem;
+  height: 14rem;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+}
+main#subscription .subscriptions-item .img{ 
+  cursor: pointer;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  background:linear-gradient(45deg,yellow,blue);
+  overflow: hidden;
+}
+main#subscription .subscriptions-item .img img{ 
+  height: 100%;
+  width: 100%;
+}
+main#subscription .subscriptions-item h5{
+  font-family:  sans-serif;
+  margin-top: 8px;
+  font-size: 100%;
+}
+main#subscription .subscriptions-item h5:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+main#subscription .subscriptions-item p{
+  margin-top: 8px;
+font-size: 90%;
+}
+main#subscription .subscriptions-item button{
+  margin-top: 8px;
+  height: 2rem;
+  width: 6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+main#subscription .subscriptions-item button:hover{
+  background-color: rgba(128, 128, 128, 0.167);
+
+}
+/* =======================shorts======================== */
+main#shorts_div{
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  row-gap: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+main#shorts_div::-webkit-scrollbar{
+  background-color: white;
+  width: .5rem;
+}
+main#shorts_div::-webkit-scrollbar-thumb{
+  background-clip: content-box;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.547);
+}
+main#shorts_div .short-div,iframe{
+  margin: auto;
+  height: 500px;
+  width: 300px;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
